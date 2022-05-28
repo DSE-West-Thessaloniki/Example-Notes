@@ -51,7 +51,8 @@
         "esbenp.prettier-vscode",
         "RobertOstermann.inline-parameters-extended",
         "bmewburn.vscode-intelephense-client",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "Vue.volar"
 	],
 	"remoteUser": "sail",
 	// "forwardPorts": [],
