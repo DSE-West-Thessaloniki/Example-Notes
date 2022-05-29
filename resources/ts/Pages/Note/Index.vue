@@ -5,7 +5,9 @@
         </h1>
         <ul v-if="notes">
             <li v-for="note in notes" :key="note.id">
-                <div class="h2">{{ note.title }}</div>
+                <div class="h2">{{ note.title }}
+                    <Link class="fs-6" :href="route('note.edit', note)">Επεξεργασία</Link>
+                </div>
                 <div>{{ note.content }}</div>
             </li>
         </ul>

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateNoteRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdateNoteRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,8 @@ class UpdateNoteRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => ['required', 'max:255', Rule::unique('notes')->ignore($this->note)],
+            'content' => 'required',
         ];
     }
 }
