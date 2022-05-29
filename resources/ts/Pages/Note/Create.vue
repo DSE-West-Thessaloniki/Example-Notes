@@ -13,11 +13,15 @@
                             <form @submit.prevent="submit">
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Τίτλος:</label>
-                                    <input id="title" class="form-control" v-model="form.title" required />
+                                    <input id="title" class="form-control" v-model="form.title" />
+                                    <div v-if="form.errors.title" v-text="form.errors.title" class="text-danger fs-6">
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="content" class="form-label">Περιεχόμενο:</label>
-                                    <textarea id="content" class="form-control" v-model="form.content" required />
+                                    <textarea id="content" class="form-control" v-model="form.content" />
+                                    <div v-if="form.errors.content" v-text="form.errors.content"
+                                        class="text-danger fs-6"></div>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <Link class="btn btn-danger" :href="route('note.index')" as="button">Άκυρο</Link>
