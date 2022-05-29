@@ -24,8 +24,10 @@
                                         class="text-danger fs-6"></div>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <Link class="btn btn-danger" :href="route('note.index')" as="button">Άκυρο</Link>
-                                    <button class="btn btn-primary" type="submit">Αποθήκευση</button>
+                                    <Link class="btn btn-danger" :href="route('note.index')" as="button"
+                                        :disabled="form.processing">Άκυρο</Link>
+                                    <button class="btn btn-primary" type="submit"
+                                        :disabled="form.processing">Αποθήκευση</button>
                                 </div>
                             </form>
                         </div>
