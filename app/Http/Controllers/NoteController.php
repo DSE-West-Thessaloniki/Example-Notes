@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreNoteRequest;
 use App\Http\Requests\UpdateNoteRequest;
 use App\Models\Note;
+use Inertia\Inertia;
 
 class NoteController extends Controller
 {
@@ -15,7 +16,11 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $notes = Note::all();
+
+        return Inertia::render('Note/Index', [
+            'notes' => $notes,
+        ]);
     }
 
     /**
