@@ -1,5 +1,5 @@
 import {AxiosInstance} from "axios";
-import {Config, QueryParams, Router} from "ziggy-js";
+import {Config, RouteParam, RouteParamsWithQueryOverloadRouter, Router} from "ziggy-js";
 
 declare global {
     interface Window {
@@ -7,5 +7,5 @@ declare global {
     }
 
     function route(): Router;
-    function route(name: string, params?: QueryParams, absolute?: boolean, customZiggy?: Config): string;
+    function route(name: string, params?: RouteParamsWithQueryOverloadRouter | RouteParam, absolute?: boolean, customZiggy?: Config): string;
 }
