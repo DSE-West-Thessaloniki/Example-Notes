@@ -30,7 +30,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Note/Create');
     }
 
     /**
@@ -41,7 +41,9 @@ class NoteController extends Controller
      */
     public function store(StoreNoteRequest $request)
     {
-        //
+        Note::create($request->validated());
+
+        return redirect(route('note.index'));
     }
 
     /**

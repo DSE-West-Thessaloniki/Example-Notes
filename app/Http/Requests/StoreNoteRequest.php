@@ -13,7 +13,7 @@ class StoreNoteRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreNoteRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|unique:notes|max:255',
+            'content' => 'required',
         ];
     }
 }
