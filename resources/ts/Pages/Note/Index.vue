@@ -7,6 +7,7 @@
             <li v-for="note in notes" :key="note.id">
                 <div class="h2">{{ note.title }}
                     <Link class="fs-6" :href="route('note.edit', note)">Επεξεργασία</Link>
+                    <Link class="fs-6 px-1" :href="route('note.destroy', note)" method="delete">Διαγραφή</Link>
                 </div>
                 <div>{{ note.content }}</div>
             </li>
