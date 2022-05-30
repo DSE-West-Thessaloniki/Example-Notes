@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory()
+            ->state(['username' => 'admin'])
+            ->hasNotes(30)
+            ->create();
+        User::factory()
             ->count(10)
             ->hasNotes(30)
             ->create();
