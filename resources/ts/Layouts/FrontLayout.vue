@@ -8,9 +8,9 @@
                 <Link href="/" class="text-decoration-none link-secondary h3">Σημειώσεις</Link>
                 <div v-if="$page.props.canLogin" class="d-flex justify-content-end">
                     <div>
-                        <Link v-if="$page.props.user" :href="route('dashboard')"
+                        <Link v-if="$page.props.user" :href="route('note.index')"
                             class="text-decoration-none text-muted">
-                        Dashboard
+                        Οι σημειώσεις μου
                         </Link>
 
                         <template v-else>
