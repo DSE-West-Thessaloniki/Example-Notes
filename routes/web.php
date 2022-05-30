@@ -30,6 +30,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::resource('/note', NoteController::class)->except(['show']);
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::resource('/note', NoteController::class)->except(['show']);
+    Route::post('/note/{note}/copy', [NoteController::class, 'copy'])->name('note.copy');
+});
 
-Route::post('/note/{note}/copy', [NoteController::class, 'copy'])->name('note.copy');
