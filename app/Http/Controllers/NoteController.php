@@ -61,7 +61,9 @@ class NoteController extends Controller
      */
     public function store(StoreNoteRequest $request)
     {
-        Note::create($request->validated()->merge(['user_id' => auth()->user()->id]));
+        Note::create($request->safe()
+            ->merge(['user_id' => auth()->user()->id])
+            ->only('user_id', 'title', 'content'));
 
         return redirect(route('note.index'));
     }
