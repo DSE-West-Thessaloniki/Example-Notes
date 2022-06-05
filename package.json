@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "test": "jest --watch"
+        "test": "jest"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.10.0",
@@ -50,6 +50,7 @@
         "tailwindcss": "^3.0.0",
         "ts-jest": "^28.0.4",
         "ts-loader": "^9.3.0",
+        "ts-node": "^10.8.1",
         "typescript": "^4.7.2",
         "vue": "^3.0.5",
         "vue-loader": "^16.1.2"
