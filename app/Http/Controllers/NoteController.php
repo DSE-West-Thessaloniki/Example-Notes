@@ -27,7 +27,9 @@ class NoteController extends Controller
                   ->orWhere('content', 'like', "%{$filter}%");
         })->paginate(10);
 
-        $notes->appends(['filter' => $filter]);
+        if ($filter) {
+            $notes->appends(['filter' => $filter]);
+        }
 
         return Inertia::render('Note/Index', [
             'notes' => $notes,
