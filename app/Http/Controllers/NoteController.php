@@ -29,8 +29,10 @@ class NoteController extends Controller
 
         $notes = Note::where('user_id', auth()->user()->id)
             ->when($filter, function($query) use ($filter) {
-                $query->where('title', 'like', "%{$filter}%")
-                    ->orWhere('content', 'like', "%{$filter}%");
+                $query->where(function($query) use ($filter) {
+                    $query->where('title', 'like', "%{$filter}%")
+                        ->orWhere('content', 'like', "%{$filter}%");
+                });
             })->paginate(10);
 
         if ($filter) {
