@@ -34,8 +34,8 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import { useForm } from '@inertiajs/inertia-vue3';
+import route from 'ziggy-js';
 
-const route = window.route;
 let form = useForm({
     title: "",
     content: "",

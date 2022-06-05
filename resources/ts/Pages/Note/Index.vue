@@ -13,7 +13,7 @@
 </template>
 <script setup lang="ts">
 import { Link } from '@inertiajs/inertia-vue3';
-const route = window.route;
+import route from 'ziggy-js';
 const props = defineProps<{
     notes: Array<App.Models.Note>
 }>();
