@@ -106,6 +106,7 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
+    "resources/ts/shims-inertia.d.ts",
     "resources/ts/shims-vue.d.ts",
     "resources/ts/shims-window.d.ts",
     "resources/ts/models.d.ts",
