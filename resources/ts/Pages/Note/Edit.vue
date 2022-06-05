@@ -40,8 +40,7 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import { useForm } from '@inertiajs/inertia-vue3';
-
-const route = window.route;
+import route from 'ziggy-js';
 
 const props = defineProps<{
     note: App.Models.Note
