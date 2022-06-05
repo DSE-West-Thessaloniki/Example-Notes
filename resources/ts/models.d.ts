@@ -7,6 +7,7 @@
 declare namespace App.Models {
     export interface User {
         id: number;
+        username: string;
         name: string;
         email: string;
         email_verified_at: string | null;
@@ -19,6 +20,8 @@ declare namespace App.Models {
         profile_photo_path: string | null;
         created_at: string | null;
         updated_at: string | null;
+        notes?: Array<App.Models.Note> | null;
+        notes_count?: number | null;
         readonly profile_photo_url?: any;
     }
 
@@ -61,6 +64,8 @@ declare namespace App.Models {
         content: string;
         created_at: string | null;
         updated_at: string | null;
+        user_id: number;
+        user?: App.Models.User | null;
     }
 
 }
