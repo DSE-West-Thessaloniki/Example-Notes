@@ -4,6 +4,7 @@ require("./bootstrap.ts");
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 import { InertiaProgress } from "@inertiajs/progress";
+import route from 'ziggy-js';
 
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
