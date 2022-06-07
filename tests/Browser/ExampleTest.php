@@ -1,7 +1,5 @@
 <?php
 
-namespace Tests\Browser;
-
 use Laravel\Dusk\Browser;
 
 test('Basic Example', function ()
