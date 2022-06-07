@@ -69,4 +69,12 @@ abstract class DuskTestCase extends BaseTestCase
         return isset($_SERVER['DUSK_START_MAXIMIZED']) ||
                isset($_ENV['DUSK_START_MAXIMIZED']);
     }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->artisan('migrate:fresh');
+        $this->seed();
+    }
 }
